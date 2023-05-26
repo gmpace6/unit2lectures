@@ -95,8 +95,8 @@ let hermioneScore = calculateScore(44)
 let harryScore = calculateScore(41)
 console.log("hermioneScore =", hermioneScore, ",", "harryScore =", harryScore)
 
-function logMyName(name) {
-    console.log(name)
+function logMyName(name3) {
+    console.log(name3)
 }
     logMyName('Cameron') // Output: Cameron
 
@@ -120,8 +120,128 @@ function calculateTotal(item1, item2) {
 }
 purse -= calculateTotal(6.59, 9.99)  // updates purse to equal 20 - 16.58 (nothing prints to console without console.log)
 
-let age = 21
+let age1 = 21
 function logDetails() {
-  let name = 'Tyler'
-  console.log(`My name is ${name} and I am ${age}.`)
+  let name4 = 'Tyler'
+  console.log(`My name is ${name4} and I am ${age1}.`)
 }
+
+
+function greeting(myName) {
+    return `Hello, ${ myName }!`;
+}
+
+var msg = greeting("Kyle");
+
+console.log(msg);   // Hello, Kyle!
+
+
+var whatToSay = {
+    greeting() {
+        console.log("Hello!");
+    },
+    question() {
+        console.log("What's your name?");
+    },
+    answer() {
+        console.log("My name is Kyle.");
+    }
+};
+whatToSay.greeting();
+// Hello!
+
+function shoeMaker (color, size) {
+    console.log(color + ", size " + size + " shoe")
+}
+shoeMaker("red", 13)
+
+function shoeMaker1 (color, size) {
+    return color + ", size " + size + " shoe"
+}
+console.log(shoeMaker1("red", 13))
+
+function giveMe7 () {
+    var seven = 7
+    return seven
+}
+var ten = giveMe7() + 3
+console.log(ten)
+
+
+// Object Orientation
+
+const dog = {
+    name: 'Freida',
+    color: 'brown/black',
+    hunger: 40,
+    mood: 'feisty',
+    age: 9,
+  };
+
+console.log(dog.name)    // prints Freida
+console.log(dog['name']) // also prints Freida
+
+let freidaAge1 = dog.age // Sometimes it’s useful to save a value to a variable so that you can use it outside of the object easily
+let {age2} = dog
+
+console.log(age2) // We can also access values using a syntax called destructuring
+
+// On the left side of the equals sign, you destructure the properties from the object, which goes on the right
+
+let {name, color, age} = dog
+
+console.log(`${name} is a ${color} dog who is ${age} years old.`)
+
+
+  const dog2 = {
+    name: 'Buddy',
+    color: 'gray',
+    age: 1
+  }
+  
+  
+  const {age: freidaAge} = dog
+  const {age: buddyAge} = dog2
+  
+  console.log(freidaAge) // 9
+  console.log(buddyAge) // 1
+  console.log(age) // undefined
+
+dog.nickname = 'Puppers';     // dot notation
+// dog['nickname'] = 'Puppers'; // square brackets
+console.log(dog)
+
+delete dog.hunger
+console.log(dog)
+
+let dog3 = {
+    'name': 'Libby',
+    'age': 3,
+    'nickname': 'Libbers'
+  };
+  console.log(dog3)
+
+  function bark(dog){
+    console.log('Arf! I am', dog.name, 'the dog!');
+  }
+  bark(dog3)
+
+  class Dog {
+    constructor(name, color){
+      this.name = name;
+      this.color = color;
+    }
+
+    bark(){
+      console.log('Arf! I am', this.name, 'the dog!');
+    }
+}
+
+let dog1 = new Dog('Freida', 'brown');
+let dog5 = new Dog('Sally', 'pink');
+
+console.log(dog1.name)  // Freida
+console.log(dog5.name)  // Sally
+
+dog1.bark()    // Arf, I'm Freida the dog!
+dog5.bark()    // Arf, I'm Sally the dog!
