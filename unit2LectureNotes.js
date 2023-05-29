@@ -262,13 +262,24 @@ function createAdder1(x) {
        return x + y
    }
 } 
-
 const addFive = createAdder(5)
 const addTen = createAdder(10)
+console.log(addFive(12)) // output: 17
+console.log(addTen(3)) // output: 13
 
-addFive(12) // output: 17
-addFive(40) // output: 45
-addTen(3) // output: 13
+let arr1 = [1, 2, 3, 4, 5]
 
-console.log(addFive(12))
-console.log(addFive(3))
+let mapArr = arr1.map(function(element, index, array) {
+  return element + 2
+})
+console.log(mapArr)
+
+let filtArr = arr1.filter(function(element, index, array) {
+  return element > 3
+})
+console.log(filtArr)
+
+let sum = arr1.reduce(function(total, element, index) {
+  return total + element
+})
+console.log(sum)
