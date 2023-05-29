@@ -245,3 +245,30 @@ console.log(dog5.name)  // Sally
 
 dog1.bark()    // Arf, I'm Freida the dog!
 dog5.bark()    // Arf, I'm Sally the dog!
+
+// use for ... in to loop over object keys
+for (let attribute in dog) {
+  console.log(`The dog's ${attribute} is ${dog[attribute]}.`);
+}
+
+bark(dog)
+bark(dog5)
+
+const createAdder = x => (y) => x + y
+
+// here's the same function written as a declaration
+function createAdder1(x) {
+   return function(y) {
+       return x + y
+   }
+} 
+
+const addFive = createAdder(5)
+const addTen = createAdder(10)
+
+addFive(12) // output: 17
+addFive(40) // output: 45
+addTen(3) // output: 13
+
+console.log(addFive(12))
+console.log(addFive(3))
